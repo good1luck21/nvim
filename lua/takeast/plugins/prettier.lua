@@ -18,6 +18,8 @@ prettier.setup({
 		"vue",
 		"yaml",
 		"html",
+		"dart",
+		"flutter",
 		"svelte",
 	},
 })

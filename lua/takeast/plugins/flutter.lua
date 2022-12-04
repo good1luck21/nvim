@@ -4,40 +4,27 @@ if not status then
 end
 
 flutter.setup({
-	ui = {
-		border = "rounded",
-		notification_style = "plugin",
-	},
-	decorations = {
-		statusline = {
-			app_version = true,
-			device = true,
-		},
-	},
-	flutter_path = "/Users/takeast/development/flutter/bin",
-	widget_guides = {
-		enabled = true,
-	},
-	closing_tags = {
-		highlight = "ErrorMsg",
-		prefix = " > ",
-		enabled = true,
-	},
-	dev_log = {
-		open_cmd = "tabedit",
-	},
 	debugger = {
 		enabled = true,
+		run_via_dap = true,
 	},
-	outline = {
-		open_cmd = "30vnew",
+	outline = { auto_open = false },
+	decorations = {
+		statusline = { device = true, app_version = true },
 	},
+	widget_guides = { enabled = true, debug = true },
+	dev_log = { enabled = false, open_cmd = "tabedit" },
 	lsp = {
 		color = {
 			enabled = true,
-			background = false,
-			virtual_text = true,
-			virtual_text_prefix = "■",
+			background = true,
+			virtual_text = false,
 		},
+		settings = {
+			showTodos = true,
+			renameFilesWithClasses = "prompt",
+		},
+		-- on_attach = require("takeast.plugins.lsp.lspconfig").on_attach,
+		-- capabilities = require("takeast.plugins.lsp.lspconfig").capabilities,
 	},
 })

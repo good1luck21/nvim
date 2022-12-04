@@ -58,7 +58,6 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
 	-- autocompletion
-	-- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
 	use("hrsh7th/cmp-path") -- source for file system paths
@@ -109,12 +108,22 @@ return packer.startup(function(use)
 
 	use("MunifTanjim/prettier.nvim") -- prettier
 
-	use({ "akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim" }) -- flutter
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+	-- config = function()
+	-- 	require("config.flutter").setup()
+	-- end, })
 
 	use({
 		"phaazon/hop.nvim",
 		branch = "v2",
 	})
+
+	-- use("akinsho/bufferline.nvim")
+	-- use("tiagovla/scope.nvim")
+	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
 
 	-- use("lukas-reineke/lsp-format.nvim") -- format on save
 

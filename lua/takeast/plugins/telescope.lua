@@ -28,4 +28,5 @@ telescope.setup({
 	},
 })
 
+telescope.load_extension("flutter")
 telescope.load_extension("fzf")
